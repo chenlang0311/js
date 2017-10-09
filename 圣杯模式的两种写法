@@ -1,0 +1,20 @@
+//圣杯模式的两种写法
+//方法一：传统模式
+function inherit(Target,Origin){
+  function F(){}
+  F.prototype=Origin.prototype;
+  Target.prototype=new F();
+  Target.prototype.constuctor=Target;
+  Target.prototype.uber=Origin.prototype;
+}
+
+//方法二：经常使用的模式
+var inherit=(function(){
+var F=function(){};
+return function(Target,Origin){
+  F.prototype=Origin.prototype;
+  Target.prototype=new F();
+  Target.prototype.constuctor=Target;
+  Target.prototype.uber=Origin.prototype;
+}
+}());
