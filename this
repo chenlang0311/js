@@ -1,0 +1,11 @@
+//1.函数预编译过程 this —> window
+//2.全局作用域里 this —> window
+//3.call/apply 可以改变函数运行时this指向
+//4.obj.func();   func()里面的this指向obj)  例子如下
+ var obj={
+  a: function (){
+  console.log(this.name)
+  }
+  name:"abc";
+ }
+ obj a();//打印出abc
