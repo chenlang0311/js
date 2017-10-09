@@ -1,3 +1,5 @@
+
+
 //圣杯模式的两种写法
 //方法一：传统模式
 function inherit(Target,Origin){
@@ -18,3 +20,12 @@ return function(Target,Origin){
   Target.prototype.uber=Origin.prototype;
 }
 }());
+
+
+//例子
+Father.prototype.lastName="chen";
+function Father(){}
+function Son(){}
+inherit(Son,Father);
+var son=new Son();
+var father=new Father();
