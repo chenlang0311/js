@@ -3,7 +3,7 @@
 //3.call/apply 可以改变函数运行时this指向
 //区分apply,call就一句话,
 
-foo.call(this, arg1,arg2,arg3) == foo.apply(this, arguments)==this.foo(arg1, arg2, arg3)
+//foo.call(this, arg1,arg2,arg3) == foo.apply(this, arguments)==this.foo(arg1, arg2, arg3)
 //4.obj.func();   func()里面的this指向obj)  例子如下
  var obj={
   a: function (){
