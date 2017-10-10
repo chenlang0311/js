@@ -12,3 +12,28 @@
   name:"abc";
  }
  obj a();//打印出abc
+
+
+
+//经典题目
+   var  name='222';
+   var a={
+       name:'111',
+       say:function(){
+       console.log(this.name);
+       }
+   }
+   var fun=a.say;
+   fun()    //打印出的是222,this指向window
+   a.say()  //打印出的是111，this指向a
+   
+   var b={
+       name='333';
+       say:function(fun){
+           fun();
+       }
+   }
+   b.say(a.say);   //打印出的是222，空执行 走预编译过程 指向window
+   b.say=a.say;
+   b.say();   //打印出的是333，this指向b.
+   
