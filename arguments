@@ -1,0 +1,1 @@
+//arguments.callee就是找到自身引用的函数.
