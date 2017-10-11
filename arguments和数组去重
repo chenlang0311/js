@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//arguments.callee就是找到自身引用的函数.
+			//数组去重  思路 将数组的值看成对象的属性名（同一个属性名不可以出现两次）hash
+			Array.prototype.unique=function(){
+					//临时
+				var temp = {},
+				 	arr = [],
+				 	len = this.length;
+				for(var i=0; i<len;i++){
+					if(!temp[this[i]]){
+						temp[this[i]]="abc";//不能用0和undefined
+						arr.push(this[i]);
+					}
+				}	
+				return arr;		
+			}
+		</script>
+	</body>
+</html>
+
