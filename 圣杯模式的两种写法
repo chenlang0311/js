@@ -1,5 +1,12 @@
-
-
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
 //圣杯模式的两种写法
 //方法一：传统模式
 function inherit(Target,Origin){
@@ -29,3 +36,8 @@ function Son(){}
 inherit(Son,Father);
 var son=new Son();
 var father=new Father();
+		</script>
+	</body>
+</html>
+
+
