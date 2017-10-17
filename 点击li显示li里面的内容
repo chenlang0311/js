@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				width: 100px;
+				height: 20px;
+				border: 1px red solid;
+			}
+		</style>
+	</head>
+	<body>
+		<ul style="width: 100px;border: 1px red solid;list-style: none;">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+		<script type="text/javascript">
+			var ul=document.getElementsByTagName("ul")[0];
+			ul.onclick=function(e){
+				var event=e||window.event;
+				var target=event.target||event.srcElement;
+//				vat tiT=target.innerText;
+//				if(tiT!=){
+//					console.log(target.innerText);
+//				}
+				console.log(target.innerText);
+			}
+		</script>
+	</body>
+</html>
