@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.contect {
+				display: none;
+				width: 80%;
+				height: 200px;
+				border: 2px red solid;
+				float: right;
+			}
+			ul{
+				list-style: none;
+			}
+			a{
+				background-color: red;
+				border: 1px red solid;
+			}			
+			.active {
+				background-color: yellow;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<ul>
+				<li>
+					<a href="#" class="active">111</a>
+				</li>
+				<li>
+					<a href="#">222</a>
+				</li>
+				<li>
+					<a href="#">333</a>
+			</ul>
+			</li>
+			<div class="contect" style="display: block;">1111</div>
+			<div class="contect">2222</div>
+			<div class="contect">3333</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var btn = document.getElementsByTagName("a");
+		var div = document.getElementsByClassName("contect");
+		for(var i = 0; i < btn.length; i++) {
+			(function(n) {
+				btn[n].onclick = function() {
+					for(var j = 0; j < btn.length; j++) {
+						btn[j].className = "";
+						div[j].style.display = "none";
+					}
+					this.className = "active";
+					div[n].style.display = "block";
+				}
+			}(i));
+		}
+	</script>
+</html>
