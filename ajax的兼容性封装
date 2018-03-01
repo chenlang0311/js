@@ -1,0 +1,28 @@
+function ajax(method,url,flag,data,callback){
+	var xhr=null;
+	if(window.XMLHttpRequest){
+		xhr=new XMLHttpRequest();
+	}else{
+		xhr=new ActiveXObject("Microsoft.XMLHttp");
+	}
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			callback(xhr.responseText);
+		}else{
+			console.log("error");
+		}
+	}
+	method= method.toUpperCase();
+	if(method=="GET"){//实现浏览器的缓存，用时间戳来改变url的值
+		var oDate= new Date(),
+			timer=oDate.getTime();		
+//		xhr.open(method,url,flag);
+		xhr.open(method,url+"?"+data+"&timer="+timer,flag);
+		xhr.send();
+	}else if( method=="POST"){
+		xhr.open(method,url,flag);
+		xhr.setRequestHeader("CONTENT-TYPE", "application/x-www-form-urlencoded");
+		xhr.send(data);		
+	}
+	
+}
